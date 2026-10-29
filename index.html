@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chuck’s Reserve Chronicle · Thrift Store on Historic Main Street, Garden Grove</title>
+<meta name="description" content="Chuck’s Reserve, an independent thrift store at 12946 Main Street, Garden Grove, CA. Clothing, housewares, and everyday finds.">
+<style>
+body{margin:0;background:#f4efe4;color:#1d1a16;font-family:Georgia,"Times New Roman",serif;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:24px}
+header{text-align:center;border-bottom:4px double #1d1a16;padding-bottom:12px}
+.vol{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;border-bottom:1px solid #1d1a16;padding-bottom:6px}
+h1{font-size:clamp(2.2rem,6vw,3.8rem);margin:.2em 0;font-variant:small-caps}
+.tag{font-style:italic}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;padding:10px 0;border-bottom:1px solid #1d1a16;font-size:.95rem}
+nav a{color:#1d1a16;text-decoration:none;text-transform:uppercase;letter-spacing:.08em}
+nav a:hover{text-decoration:underline}
+section{padding:22px 0;border-bottom:1px solid #b9ad97}
+h2{font-variant:small-caps;font-size:1.7rem;margin:0 0 .4em;border-left:6px solid #7a2e1f;padding-left:10px}
+table{width:100%;border-collapse:collapse;max-width:480px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid #b9ad97}
+th{background:#1d1a16;color:#f4efe4}
+tr.today{background:#e6d9bd;font-weight:bold}
+.status{display:inline-block;margin-top:10px;padding:6px 12px;border:2px solid #1d1a16;font-weight:bold}
+.note{font-size:.9rem;font-style:italic}
+a.tel{color:#7a2e1f;font-weight:bold}
+footer{text-align:center;font-size:.85rem;padding:20px 0}
+</style></head><body><div class="wrap">
+<header>
+<div class="vol">Vol. I · No. 1 — Historic Main Street Edition</div>
+<h1>Chuck’s Reserve Chronicle</h1>
+<div class="tag">Long-established thrift store · 12946 Main Street, Garden Grove, CA</div>
+</header>
+<nav><a href="#about">About</a><a href="#hours">Hours</a><a href="#visit">Visit</a><a href="#donations">Donations</a><a href="#contact">Contact</a></nav>
+
+<section id="about"><h2>About the Store</h2>
+<p>Chuck’s Reserve is one of the few remaining independent thrift stores in Garden Grove, located at the heart of Historic Main Street. We keep the spirit of thrifting simple: low prices, clean space, and a constantly rotating selection of clothing, housewares, and everyday finds.</p>
+<p>As a co-owned venture under the broader SCG ENTERPRIZES family, the store focuses on community accessibility and straightforward secondhand retail. Inventory turns over regularly from local donations.</p>
+<p><strong>Current focus:</strong> Clean, priced inventory and consistent hours so regulars know what to expect when they walk in.</p></section>
+
+<section id="hours"><h2>Hours</h2>
+<table><thead><tr><th>Day</th><th>Hours</th></tr></thead><tbody id="hrs">
+<tr data-d="1"><td>Monday</td><td>7:00 AM – 1:00 PM</td></tr>
+<tr data-d="2"><td>Tuesday</td><td>7:00 AM – 1:00 PM</td></tr>
+<tr data-d="3"><td>Wednesday</td><td>7:00 AM – 1:00 PM</td></tr>
+<tr data-d="4"><td>Thursday</td><td>7:00 AM – 1:00 PM</td></tr>
+<tr data-d="5"><td>Friday</td><td>7:00 AM – 1:00 PM</td></tr>
+<tr data-d="6"><td>Saturday</td><td>8:00 AM – 5:00 PM</td></tr>
+<tr data-d="0"><td>Sunday</td><td>8:00 AM – 5:00 PM</td></tr>
+</tbody></table>
+<div class="status" id="status"></div>
+<p class="note">Hours subject to occasional adjustment for Main Street events. Check social media or call ahead on event weekends.</p></section>
+
+<section id="visit"><h2>Visit Us</h2>
+<p><strong>Address:</strong> 12946 Main Street, Garden Grove, CA 92840 · <a class="tel" href="https://www.google.com/maps/search/?api=1&query=12946+Main+Street+Garden+Grove+CA+92840">Get directions</a></p>
+<p>Near the intersection of Main Street and Walnut Avenue in the Historic Main Street district. Street parking is typically available; the area hosts periodic street fairs and car shows that bring extra foot traffic.</p>
+<p><strong>Phone:</strong> <a class="tel" href="tel:+17145847438">(714) 584-7438</a></p>
+<p>We accept cash and Zelle. One dressing room available for trying on clothing.</p></section>
+
+<section id="donations"><h2>Donations</h2>
+<p>We accept clean, usable clothing, housewares, and small household items during open hours. Please bring items in bags or boxes when possible.</p>
+<ul><li>Clothing in good condition</li><li>Small housewares and kitchen items</li><li>Books, décor, and everyday goods</li></ul>
+<p>Large furniture or oversized items: call or text ahead so we can confirm we have space. We may arrange limited pickups depending on location and item size.</p></section>
+
+<section id="contact"><h2>Contact</h2>
+<p><strong>Phone / Text:</strong> <a class="tel" href="tel:+17145847438">(714) 584-7438</a></p>
+<p>For donation questions, hours confirmation, or general inquiries.</p>
+<p>Part of the broader SCG ENTERPRIZES family of community-focused ventures. See the main SCG Chronicle for related brands and projects.</p></section>
+
+<footer>Chuck’s Reserve · Historic Main Street, Garden Grove · Co-owned under SCG ENTERPRIZES LLC<br>This is an informational page for the store. Hours and offerings may change—call to confirm.</footer>
+</div>
+<script>
+const n=new Date(new Date().toLocaleString("en-US",{timeZone:"America/Los_Angeles"}));
+const d=n.getDay(),m=n.getHours()*60+n.getMinutes();
+const wk=d>=1&&d<=5,o=wk?420:480,c=wk?780:1020;
+document.querySelector('tr[data-d="'+d+'"]').classList.add('today');
+document.getElementById('status').textContent=(m>=o&&m<c)?"Open now":"Closed now · "+(m<o?"opens today at "+(wk?"7 AM":"8 AM"):"see hours above");
+</script></body></html>
